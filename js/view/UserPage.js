@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, Text, Button} from 'react-native';
+import Route from '../utils/Route';
 
 class UserPage extends Component {
     constructor(props) {
@@ -9,7 +10,12 @@ class UserPage extends Component {
     render() {
         return (
             <SafeAreaView>
-                <Text>HomePage</Text>
+                <Text>UserPage</Text>
+                <Button onPress={() => {
+                    Route.navigate('OtherStackNavigator', {
+                        screen: 'AboutPage',
+                    });
+                }} title="AboutPage"/>
             </SafeAreaView>
         );
     }
